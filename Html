@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoe Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Explore a wide range of shoes for men, women, and kids. Find the perfect pair at our shoe store with detailed product views, cart, and wishlist features.">
+    <meta property="og:title" content="Shoe Store">
+    <meta property="og:description" content="Explore a wide range of shoes for men, women, and kids. Find the perfect pair at our shoe store with detailed product views, cart, and wishlist features.">
+    <meta property="og:image" content="link-to-your-og-image.jpg">
+    <meta property="og:url" content="your-website-url">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Shoe Store</h1>
+            <nav>
+                <a href="#" aria-label="Home">Home</a>
+                <a href="#" aria-label="Men's Shoes">Men's Shoes</a>
+                <a href="#" aria-label="Women's Shoes">Women's Shoes</a>
+                <a href="#" aria-label="Kids' Shoes">Kids' Shoes</a>
+                <a href="#" id="toggleCart" aria-label="Shopping Cart">Cart</a>
+                <a href="#" id="toggleWishlist" aria-label="Wishlist">Wishlist</a>
+                <a href="#" aria-label="Contact Us">Contact Us</a>
+                <a href="#" aria-label="My Account">My Account</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Search Bar -->
+        <section class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search for shoes..." aria-label="Search bar">
+            <div id="searchSuggestions" class="search-suggestions" aria-live="polite"></div>
+        </section>
+
+        <!-- Sorting and Filtering -->
+        <section class="filter-sort">
+            <div class="filter">
+                <label for="category">Filter by Category:</label>
+                <select id="category" aria-label="Filter by Category">
+                    <option value="all">All</option>
+                    <option value="men">Men's Shoes</option>
+                    <option value="women">Women's Shoes</option>
+                    <option value="kids">Kids' Shoes</option>
+                </select>
+            </div>
+            <div class="filter">
+                <label for="size">Filter by Size:</label>
+                <select id="size" aria-label="Filter by Size">
+                    <option value="all">All Sizes</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+            <div class="sort">
+                <label for="sort">Sort by:</label>
+                <select id="sort" aria-label="Sort by">
+                    <option value="price-asc">Price: Low to High</option>
+                    <option value="price-desc">Price: High to Low</option>
+                    <option value="rating">Rating</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Product Display -->
+        <section class="product-grid">
+            <!-- Product Item Template -->
+            <div class="product-item men" data-product-name="Stylish Running Shoes" data-price="2999" data-description="High-quality running shoes designed for maximum comfort and durability." data-reviews='[{"rating":5,"comment":"Excellent shoes!"},{"rating":4,"comment":"Very comfortable."}]'>
+                <div class="carousel">
+                    <img src="shoe1-red.jpg" alt="Red Running Shoes" class="carousel-image">
+                    <img src="shoe1-blue.jpg" alt="Blue Running Shoes" class="carousel-image" style="display:none;">
+                </div>
+                <button class="prevBtn" aria-label="Previous Image">Previous</button>
+                <button class="nextBtn" aria-label="Next Image">Next</button>
+                <div class="product-details">
+                    <h2>Stylish Running Shoes</h2>
+                    <div class="price">₹2999</div>
+                    <div class="quantity">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" class="quantity-input" value="1" min="1" aria-label="Quantity">
+                    </div>
+                    <button class="view-details" data-description="High-quality running shoes designed for maximum comfort and durability." data-reviews='[{"rating":5,"comment":"Excellent shoes!"},{"rating":4,"comment":"Very comfortable."}]' aria-label="View Details">View Details</button>
+                    <button class="add-to-cart" data-product-name="Stylish Running Shoes" data-price="2999" aria-label="Add to Cart">Add to Cart</button>
+                    <button class="add-to-wishlist" data-product-name="Stylish Running Shoes" aria-label="Add to Wishlist">Add to Wishlist</button>
+                    <div class="ratings">
+                        <span class="rating-value">4.5</span> <span class="rating-text">★★★★☆</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Example product item -->
+            <div class="product-item women" data-product-name="Elegant Sneakers" data-price="3499" data-description="Elegant sneakers with a touch of class for every occasion." data-reviews='[{"rating":4,"comment":"Very stylish and comfortable."},{"rating":5,"comment":"Perfect for any occasion."}]'>
+                <div class="carousel">
+                    <img src="shoe2-black.jpg" alt="Black Sneakers" class="carousel-image">
+                    <img src="shoe2-white.jpg" alt="White Sneakers" class="carousel-image" style="display:none;">
+                </div>
+                <button class="prevBtn" aria-label="Previous Image">Previous</button>
+                <button class="nextBtn" aria-label="Next Image">Next</button>
+                <div class="product-details">
+                    <h2>Elegant Sneakers</h2>
+                    <div class="price">₹3499</div>
+                    <div class="quantity">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" class="quantity-input" value="1" min="1" aria-label="Quantity">
+                    </div>
+                    <button class="view-details" data-description="Elegant sneakers with a touch of class for every occasion." data-reviews='[{"rating":4,"comment":"Very stylish and comfortable."},{"rating":5,"comment":"Perfect for any occasion."}]' aria-label="View Details">View Details</button>
+                    <button class="add-to-cart" data-product-name="Elegant Sneakers" data-price="3499" aria-label="Add to Cart">Add to Cart</button>
+                    <button class="add-to-wishlist" data-product-name="Elegant Sneakers" aria-label="Add to Wishlist">Add to Wishlist</button>
+                    <div class="ratings">
+                        <span class="rating-value">4.7</span> <span class="rating-text">★★★★☆</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shopping Cart -->
+        <aside class="cart-sidebar" id="cartSidebar" aria-labelledby="cartSidebarTitle">
+            <h2 id="cartSidebarTitle">Shopping Cart</h2>
+            <ul></ul>
+            <div class="total">Total: ₹0</div>
+            <button id="checkout" aria-label="Proceed to Checkout">Checkout</button>
+        </aside>
+
+        <!-- Wishlist Sidebar -->
+        <aside class="wishlist-sidebar" id="wishlistSidebar" aria-labelledby="wishlistSidebarTitle">
+            <h2 id="wishlistSidebarTitle">Wishlist</h2>
+            <ul></ul>
+            <button id="clearWishlist" aria-label="Clear Wishlist">Clear Wishlist</button>
+        </aside>
+
+        <!-- Product Detail Modal -->
+        <div id="productModal" class="modal" role="dialog" aria-labelledby="modalProductName" aria-hidden="true">
+            <div class="modal-content">
+                <span class="close" aria-label="Close">&times;</span>
+                <div id="modalProductImages" class="modal-images"></div>
+                <h2 id="modalProductName"></h2>
+                <p id="modalProductDescription"></p>
+                <div id="modalProductReviews" class="modal-reviews"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: <a href="mailto:support@shoestore.com">support@shoestore.com</a></p>
+                    <p>Phone: <a href="tel:+1234567890">+123 456 7890</a></p>
+                    <p>Address: 123 Shoe Street, Footville</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <a href="#" aria-label="Follow us on Facebook"><img src="facebook-icon.png" alt="Facebook
+
+
+
